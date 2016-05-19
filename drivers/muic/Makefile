@@ -19,17 +19,5 @@ obj-$(CONFIG_MUIC_SM5705)		+= sm5703-muic.o
 obj-$(CONFIG_MUIC_SM5705_AFC)		+= sm5703-muic-afc.o
 
 # MUIC_UNIVERSAL
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_task.o
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_state.o
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_apis.o
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_sysfs.o
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_debug.o
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_dt.o
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_i2c.o
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_regmap.o
-obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/muic_vps.o
-obj-$(CONFIG_MUIC_UNIVERSAL_SM5703)	+= universal/muic_regmap_sm5703.o
-obj-$(CONFIG_MUIC_UNIVERSAL_SM5705)	+= universal/muic_regmap_sm5705.o
-obj-$(CONFIG_MUIC_UNIVERSAL_SM5705_AFC)	+= universal/muic_afc.o
-obj-$(CONFIG_MUIC_UNIVERSAL_SM5504)	+= universal/muic_regmap_sm5504.o
+obj-$(CONFIG_MUIC_UNIVERSAL)		+= universal/
 
