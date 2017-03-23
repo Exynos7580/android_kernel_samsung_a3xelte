@@ -58,6 +58,8 @@ obj-$(CONFIG_UID_CPUTIME) += uid_cputime.o
 obj-$(CONFIG_SCHED_HMP)		+= cci400.o
 obj-$(CONFIG_MIPI_LLI)		+= mipi-lli/
 obj-y				+= mcu/
+obj-$(CONFIG_GENERIC_BLN)	+= bln.o
+
 # HMP
 obj-$(CONFIG_SCHED_HMP)		+= exynos_core_sysfs.o
 obj-$(CONFIG_EXYNOS_OTP)	+= exynos_otp.o
