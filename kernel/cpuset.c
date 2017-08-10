@@ -1962,6 +1962,23 @@ static void cpuset_css_free(struct cgroup *cont)
 	kfree(cs);
 }
 
+static int cpuset_allow_attach(struct cgroup_taskset *tset)
+{
+	const struct cred *cred = current_cred(), *tcred;
+	struct task_struct *task;
+	struct cgroup_subsys_state *css;
+
+	cgroup_taskset_for_each(task, css, tset) {
+		tcred = __task_cred(task);
+
+		if ((current != task) && !capable(CAP_SYS_ADMIN) &&
+		     cred->euid.val != tcred->uid.val && cred->euid.val != tcred->suid.val)
+			return -EACCES;
+	}
+
+	return 0;
+}
+
 struct cgroup_subsys cpuset_subsys = {
 	.name = "cpuset",
 	.css_alloc = cpuset_css_alloc,
@@ -1969,6 +1986,7 @@ struct cgroup_subsys cpuset_subsys = {
 	.css_offline = cpuset_css_offline,
 	.css_free = cpuset_css_free,
 	.can_attach = cpuset_can_attach,
+	.allow_attach = cpuset_allow_attach,
 	.cancel_attach = cpuset_cancel_attach,
 	.attach = cpuset_attach,
 	.subsys_id = cpuset_subsys_id,
