@@ -129,7 +129,7 @@
 		   SEC_BATTERY_FULL_CONDITION_VCELL */
 		battery,full_condition_type = <13>;
 		battery,full_condition_soc = <93>;
-		battery,full_condition_vcell = <4275>;
+		battery,full_condition_vcell = <4300>;
 
 		battery,recharge_check_count = <2>;
 		battery,recharge_condition_type = <4>; /* SEC_BATTERY_RECHARGE_CONDITION_VCELL */
@@ -147,10 +147,10 @@
 		battery,self_discharging_temp_recov = <550>;
 		battery,self_discharging_temp_pollingtime = <400>;
 
-		battery,swelling_high_temp_block = <500>;
-		battery,swelling_high_temp_recov = <450>;
-		battery,swelling_low_temp_block = <50>;
-		battery,swelling_low_temp_recov = <100>;
+		battery,swelling_high_temp_block = <450>;
+		battery,swelling_high_temp_recov = <400>;
+		battery,swelling_low_temp_block = <100>;
+		battery,swelling_low_temp_recov = <150>;
 		battery,swelling_chg_current = <1300>;
 		battery,swelling_drop_float_voltage = <4200>;
 		battery,swelling_high_rechg_voltage = <4150>;
