@@ -1962,17 +1962,17 @@ static void cpuset_css_free(struct cgroup *cont)
 	kfree(cs);
 }
 
-static int cpuset_allow_attach(struct cgroup_taskset *tset)
+static int cpuset_allow_attach(struct cgroup *cgrp,
+			       struct cgroup_taskset *tset)
 {
 	const struct cred *cred = current_cred(), *tcred;
 	struct task_struct *task;
-	struct cgroup_subsys_state *css;
 
-	cgroup_taskset_for_each(task, css, tset) {
+	cgroup_taskset_for_each(task, cgrp, tset) {
 		tcred = __task_cred(task);
 
 		if ((current != task) && !capable(CAP_SYS_ADMIN) &&
-		     cred->euid.val != tcred->uid.val && cred->euid.val != tcred->suid.val)
+		    cred->euid != tcred->uid && cred->euid != tcred->suid)
 			return -EACCES;
 	}
 
