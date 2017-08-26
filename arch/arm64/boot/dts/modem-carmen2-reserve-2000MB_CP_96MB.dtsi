@@ -12,10 +12,10 @@
 #include "modem-carmen2-pdata.dtsi"
 / {
 	/* over-riding shared memory reserved map */
-	/* DRAM 3GB + CP reserved map 116+4MB */
+	/* DRAM 2GB + CP reserved map 96+4MB */
 	shmem: shmem@0xB0000000 {
-		reg = <0x0 0xF0000000 0x0 0x7800000>;
-		shmem,ipc_offset = <0x7400000>;
+		reg = <0x0 0xB0000000 0x0 0x6400000>;
+		shmem,ipc_offset = <0x6000000>;
 		shmem,ipc_size = <0x400000>;
 	};
 };
