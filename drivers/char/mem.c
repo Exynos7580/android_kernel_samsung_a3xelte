@@ -38,6 +38,10 @@
 #include <linux/mst_ctrl.h>
 #endif
 
+#ifdef CONFIG_MST_LDO
+#include <linux/mst_ctrl.h>
+#endif
+
 #include <asm/uaccess.h>
 
 #ifdef CONFIG_IA64
