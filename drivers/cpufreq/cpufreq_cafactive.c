@@ -79,7 +79,6 @@ static struct task_struct *speedchange_task;
 static cpumask_t speedchange_cpumask;
 static spinlock_t speedchange_cpumask_lock;
 static struct mutex gov_lock;
-extern u64 get_cpu_idle_time(unsigned int cpu, u64 *wall, int io_busy); 
 
 //static int set_window_count;
 //static int migration_register_count;
