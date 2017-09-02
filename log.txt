@@ -1,0 +1,53 @@
+make : on entre dans le répertoire « /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte »
+  GEN     /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/output/Makefile
+#
+# configuration written to .config
+#
+make : on quitte le répertoire « /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte »
+make : on entre dans le répertoire « /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte »
+  GEN     /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/output/Makefile
+scripts/kconfig/conf --silentoldconfig Kconfig
+  GEN     /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/output/Makefile
+  CHK     include/generated/uapi/linux/version.h
+  Using /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte as source for kernel
+  CHK     include/generated/utsrelease.h
+  CC      scripts/mod/devicetable-offsets.s
+  GEN     scripts/mod/devicetable-offsets.h
+  HOSTCC  scripts/mod/file2alias.o
+  HOSTLD  scripts/mod/modpost
+make[2]: rien à faire pour « dtbs ».
+  CALL    /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  LINK    vmlinux
+  LD      vmlinux.o
+  MODPOST vmlinux.o
+  GEN     .version
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  LD      init/built-in.o
+make : on quitte le répertoire « /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte »
+drivers/built-in.o: In function `update_load':
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/cpufreq/cpufreq_cafactive.c:399: undefined reference to `get_cpu_idle_time'
+drivers/built-in.o: In function `cpufreq_cafactive_timer_resched':
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/cpufreq/cpufreq_cafactive.c:211: undefined reference to `get_cpu_idle_time'
+drivers/built-in.o: In function `__cpufreq_cafactive_timer':
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/cpufreq/cpufreq_cafactive.c:464: undefined reference to `cpufreq_govinfo_notifier_list'
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/cpufreq/cpufreq_cafactive.c:464: undefined reference to `cpufreq_govinfo_notifier_list'
+drivers/built-in.o: In function `cpufreq_cafactive_timer_start':
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/cpufreq/cpufreq_cafactive.c:254: undefined reference to `get_cpu_idle_time'
+drivers/built-in.o: In function `calculate_thread_stats':
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/cpufreq/lazyplug.c:257: undefined reference to `avg_nr_running'
+drivers/built-in.o: In function `update_per_cpu_stat':
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/cpufreq/lazyplug.c:309: undefined reference to `avg_cpu_nr_running'
+drivers/built-in.o: In function `argos_task_affinity_apply':
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/staging/samsung/sec_argos.c:294: undefined reference to `__set_force_hstate'
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/staging/samsung/sec_argos.c:300: undefined reference to `__set_force_hstate'
+drivers/built-in.o: In function `argos_irq_affinity_apply':
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/staging/samsung/sec_argos.c:332: undefined reference to `__set_force_hstate'
+/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/drivers/staging/samsung/sec_argos.c:338: undefined reference to `__set_force_hstate'
+make[1]: *** [/run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/Makefile:799: vmlinux] Error 1
+make: *** [Makefile:130: sub-make] Error 2
+./build.sh: ligne 26: /run/media/vlourme/728cd669-1079-4c8e-ab0f-f35d7cc3019c/kernel/samsung/a3xelte/dtbTool: Aucun fichier ou dossier de ce type
+cp: impossible d'évaluer 'output/arch/arm64/boot/Image': Aucun fichier ou dossier de ce type
+
