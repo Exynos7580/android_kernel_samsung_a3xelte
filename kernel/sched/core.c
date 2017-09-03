@@ -168,13 +168,13 @@ static int sched_feat_show(struct seq_file *m, void *v)
 
 #ifdef HAVE_JUMP_LABEL
 
-#define jump_label_key__true  STATIC_KEY_INIT_TRUE
-#define jump_label_key__false STATIC_KEY_INIT_FALSE
+#define jump_label_key__true  jump_label_key_enabled
+#define jump_label_key__false jump_label_key_disabled
 
 #define SCHED_FEAT(name, enabled)	\
 	jump_label_key__##enabled ,
 
-struct static_key sched_feat_keys[__SCHED_FEAT_NR] = {
+struct jump_label_key sched_feat_keys[__SCHED_FEAT_NR] = {
 #include "features.h"
 };
 
@@ -182,14 +182,14 @@ struct static_key sched_feat_keys[__SCHED_FEAT_NR] = {
 
 static void sched_feat_disable(int i)
 {
-	if (static_key_enabled(&sched_feat_keys[i]))
-		static_key_slow_dec(&sched_feat_keys[i]);
+	if (jump_label_enabled(&sched_feat_keys[i]))
+		jump_label_dec(&sched_feat_keys[i]);
 }
 
 static void sched_feat_enable(int i)
 {
-	if (!static_key_enabled(&sched_feat_keys[i]))
-		static_key_slow_inc(&sched_feat_keys[i]);
+	if (!jump_label_enabled(&sched_feat_keys[i]))
+		jump_label_inc(&sched_feat_keys[i]);
 }
 #else
 static void sched_feat_disable(int i) { };
@@ -829,7 +829,7 @@ static void update_rq_clock_task(struct rq *rq, s64 delta)
 	delta -= irq_delta;
 #endif
 #ifdef CONFIG_PARAVIRT_TIME_ACCOUNTING
-	if (static_key_false((&paravirt_steal_rq_enabled))) {
+	if (static_branch((&paravirt_steal_rq_enabled))) {
 		u64 st;
 
 		steal = paravirt_steal_clock(cpu_of(rq));
