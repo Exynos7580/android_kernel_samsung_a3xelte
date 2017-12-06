@@ -4,7 +4,7 @@ Copyright (C) 2017 NetfariousIntent
 
 This kernel is for Android O and might not work with 7.0 or down.
 
-This is a common kernel for Exynos7580 devices, actually it contain code for :
-- A3 2016
-- A5 2016
-- J7 2015
+This is a common kernel for Exynos7580 devices, actually it contains source code for the :
+- A3 2016 (FULLY SUPPORTED AND ONLY TESTED DEVICE!)
+- A5 2016 (NOT TESTED)
+- J7 2015 (NOT TESTED)
